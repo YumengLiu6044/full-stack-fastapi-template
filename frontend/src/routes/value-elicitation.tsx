@@ -31,12 +31,11 @@ function ValueElicitation() {
 				<NavButton text="Logout" />
 			</div>
 
-			{/* Form */}
-			<div className="flex flex-col items-start flex-grow  gap-8 mt-8">
+			<div id="main-section" className="flex flex-col items-start flex-grow  gap-8 mt-8">
 				<h1 className="flex-grow-0 text-5xl bg-gradient-to-r from-custom-salmon to-custom-blue text-transparent bg-clip-text">
 					Value Elicitation
 				</h1>
-				<div className="w-full flex-grow flex flex-row gap-8">
+				<div id="policy-cards" className="w-full flex-grow flex flex-row gap-8">
 					<PolicyCard
 						cardTitle="Policy A"
 						cardDescription="Description A Description A Description A Description A Description A Description A"
@@ -51,7 +50,7 @@ function ValueElicitation() {
 					/>
 				</div>
 
-				<div className="w-full flex-grow flex flex-col items-start border border-gray-300 rounded-xl p-6 gap-4">
+				<div id="input-form" className="w-full flex-grow flex flex-col items-start border border-gray-300 rounded-xl p-6 gap-4">
 					<p className="text-lg">Your Preference</p>
 					<fieldset>
 						<div
@@ -97,11 +96,11 @@ function ValueElicitation() {
 					</div>
 				</div>
 
-				<div className="flex flex-col w-full gap-4">
+				<div id="progress-section" className="flex flex-col w-full gap-4">
 					<p className="ml-auto">
 						{completedQuestion} of {totalQuestion}
 					</p>
-					<div className="bg-gray-200 rounded-full h-4 flex flex-row items-start">
+					<div id="progress-bar" className="bg-gray-200 rounded-full h-4 flex flex-row items-start">
 						<div className="h-full flex rounded-full bg-gradient-to-r from-custom-salmon to-custom-blue transition-all ease-out duration-500" style={{width: `${completedQuestion / totalQuestion * 100}%`}}></div>
 					</div>
 				</div>
