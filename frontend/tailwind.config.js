@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import {theme} from "./src/theme.tsx"
+
 export default {
   content: [
     "./src/routes/value-elicitation.tsx"
@@ -7,10 +9,11 @@ export default {
     extend: {
       colors: {
         "custom-salmon": "#FEA691",
-        "custom-blue": "#8AB0FE"
+        "custom-blue": "#8AB0FE",
+        "": "",
       },
       fontFamily: {
-        outfit: ['Outfit', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
     },
   },

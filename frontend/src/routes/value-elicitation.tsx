@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import "./value-elicitation.css";
+import {assets} from "../assets/assets.ts"
 
 export const Route = createFileRoute("/value-elicitation")({
 	component: ValueElicitation,
@@ -21,9 +22,15 @@ function ValueElicitation() {
 		setPreferenceReason("");
 		setCompletedQuestion(completedQuestion + 1);
 	};
-
+	console.log(window.location.origin);
 	return (
-		<div className="flex flex-col font-outfit text-gray-600 mx-20 my-4">
+		<div
+			className="flex flex-col font-raleway text-gray-600 mx-20 my-4 bg-no-repeat bg-cover bg-center"
+			style={{
+				backgroundImage: `url(${assets.backgroundRed}), url(${assets.backgroundBlue})`,
+				backgroundSize: "contain"
+			}}
+		>
 			{/* Nav bar */}
 			<div className="flex flex-row justify-end gap-4">
 				<NavButton text="Home" />
@@ -32,7 +39,7 @@ function ValueElicitation() {
 			</div>
 
 			<div id="main-section" className="flex flex-col items-start flex-grow  gap-8 mt-8">
-				<h1 className="flex-grow-0 text-5xl bg-gradient-to-r from-custom-salmon to-custom-blue text-transparent bg-clip-text">
+				<h1 className="flex-grow-0 text-5xl font-medium bg-gradient-to-r from-custom-salmon to-custom-blue text-transparent bg-clip-text">
 					Value Elicitation
 				</h1>
 				<div id="policy-cards" className="w-full flex-grow flex flex-row gap-8">
@@ -50,7 +57,7 @@ function ValueElicitation() {
 					/>
 				</div>
 
-				<div id="input-form" className="w-full flex-grow flex flex-col items-start border border-gray-300 rounded-xl p-6 gap-4">
+				<div id="input-form" className="w-full flex-grow flex flex-col items-start bg-white border border-gray-300 rounded-xl p-6 gap-4">
 					<p className="text-lg">Your Preference</p>
 					<fieldset>
 						<div
@@ -82,6 +89,7 @@ function ValueElicitation() {
 						className="w-full flex-grow py-2 px-6 bg-gray-200 rounded-3xl"
 						placeholder="Optional: Why did you make this choice?"
 						onChange={(e) => setPreferenceReason(e.target.value)}
+						value={preferenceReason}
 					/>
 					<div className="ml-auto flex items-center justify-center">
 						<button
@@ -89,7 +97,7 @@ function ValueElicitation() {
 							className="transtion group flex h-10 w-32 items-center justify-center rounded-full bg-gradient-to-r from-custom-salmon to-custom-blue p-[1.5px]"
 							onClick={handleSubmit}
 						>
-							<div className="flex h-full w-full items-center justify-center rounded-full bg-white hover:bg-gray-200 transition duration-300">
+							<div className="flex h-full w-full font-medium items-center justify-center rounded-full bg-white hover:bg-gray-200 transition duration-300">
 								Submit
 							</div>
 						</button>
@@ -104,7 +112,7 @@ function ValueElicitation() {
 						<div className="h-full flex rounded-full bg-gradient-to-r from-custom-salmon to-custom-blue transition-all ease-out duration-500" style={{width: `${completedQuestion / totalQuestion * 100}%`}}></div>
 					</div>
 				</div>
-			</div>
+			</div> 
 		</div>
 	);
 }
@@ -128,10 +136,10 @@ function PolicyCard(props: {
 }) {
 	return (
 		<div
-			className={`flex flex-grow basis-0 flex-col gap-3 border ${props.isSelected ? "border-gray-500" : "border-gray-300"} rounded-xl p-6 hover:shadow-md transition duration-300`}
+			className={`flex flex-grow basis-0 flex-col gap-3 bg-white border ${props.isSelected ? "border-gray-500" : "border-gray-300"} rounded-xl p-6 hover:shadow-md transition duration-300`}
 			onClick={props.onClick}
 		>
-			<p className="text-2xl">{props.cardTitle}</p>
+			<p className="text-2xl font-medium">{props.cardTitle}</p>
 			<p className="text-lg text-gray-400">{props.cardDescription}</p>
 		</div>
 	);
