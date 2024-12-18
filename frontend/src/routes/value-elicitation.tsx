@@ -10,8 +10,9 @@ export const Route = createFileRoute("/value-elicitation")({
 function ValueElicitation() {
 	const [selectedOption, setSelectedOption] = useState("");
 	const [preferenceReason, setPreferenceReason] = useState("");
-	const [totalQuestion, setTotalQuestion] = useState(5);
 	const [completedQuestion, setCompletedQuestion] = useState(0);
+	
+	const totalQuestion = 5
 
 	const handleSubmit = () => {
 		if (selectedOption === "" || completedQuestion >= totalQuestion) {
