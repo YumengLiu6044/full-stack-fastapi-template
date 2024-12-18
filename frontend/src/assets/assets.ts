@@ -1,7 +1,5 @@
-import backgroundBlue from "./background-layer-1.png";
-import backgroundRed from "./background-layer-2.png";
+import bgBlob from "./bgblobs.png";
 
 export const assets = {
-  backgroundBlue,
-  backgroundRed
+  bgBlob
 }

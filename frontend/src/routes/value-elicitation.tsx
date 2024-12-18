@@ -11,7 +11,7 @@ function ValueElicitation() {
 	const [selectedOption, setSelectedOption] = useState("");
 	const [preferenceReason, setPreferenceReason] = useState("");
 	const [completedQuestion, setCompletedQuestion] = useState(0);
-	
+
 	const totalQuestion = 5
 
 	const handleSubmit = () => {
@@ -28,7 +28,7 @@ function ValueElicitation() {
 		<div
 			className="flex flex-col font-raleway text-gray-600 mx-20 my-4 bg-no-repeat bg-cover bg-center"
 			style={{
-				backgroundImage: `url(${assets.backgroundRed}), url(${assets.backgroundBlue})`,
+				backgroundImage: `url(${assets.bgBlob})`,
 				backgroundSize: "contain"
 			}}
 		>
